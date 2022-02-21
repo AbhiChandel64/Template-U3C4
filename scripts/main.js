@@ -36,7 +36,7 @@ function appendArticles(articles, main) {
         if (pathname === '/news.html') {
             const articleContent = document.createElement("div");
             articleContent.className = "content";
-            articleContent.innerText = content;
+            articleContent.innerHTML = content;
             articleContent.style.display = "block";
 
             articleViewItem.appendChild(articleTitle);
