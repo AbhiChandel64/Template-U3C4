@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/news.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!--DO NOT CHANGE THIS ID's-->
+
+  <div id="container">
+    <div id="sidebar">
+      <!--add your sidebar component here-->
+    </div>
+
+    <div id="main">
+      <!--DO NOT CHANGE THIS ID's-->
+      <!--Show the clicked article in detailed format here ONLY-->
+    </div>
+  </div>
+
+  <script type="module">
+    import { appendArticles } from './scripts/main.js';
+    import getSidebar from './components/sidebar.js';
+
+    const sidebarElement = document.getElementById("sidebar");
+    const sidebar = getSidebar();
+    sidebarElement.appendChild(sidebar);
+
+    const storedData = localStorage.getItem("article");
+    if (!storedData) {
+      alert("Please select an article");
+      window.location.href = "/index.html";
+    }
+
+    const main = document.getElementById("main");
+    main.innerHTML = "";
+
+    const selectedArticle = JSON.parse(storedData);
+    appendArticles([selectedArticle], main);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  margin: 20px;
+}
+
+.sidebar .heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.search-box {
+  padding: 5px;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#main .news {
+  display: flex;
+  margin: 20px;
+  border: 1px solid gray;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#main .news div {
+  width: 30%;
+
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+#main .news img {
+  width: 40%;
+  flex-basis: 100%;
+}
